@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+{% load widget_tweaks %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View</title>
+    <link rel="stylesheet" href="{% static 'css/bulma.css' %}">
+</head>
+<body>
+<div class="columns is-centered" style="margin-top: 5vw">
+        <div class="column is-half">
+            <h2 class="heading" style="font-size: 25px; text-align: center">Text</h2>
+            <form method="post">
+                {% csrf_token %}
+                <div class="field">
+                  <label class="label">Script</label>
+<textarea rows="50" cols="50">
+    {{text}}
+</textarea>
+                </div>
+                <div style="text-align:center;"><input class="button is-primary"  type="submit" value="Save as PDF"><a href="/saveAsPDF/"></a></div>
+                <br><br>
+                <div style="text-align:center;"><input class="button is-primary"  type="submit" value="Save as DOC"><a href="/saveAsDOC/"></a></div>
+            </form>
+        </div>
+</div>
+</body>
+</html>
